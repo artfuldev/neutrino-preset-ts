@@ -206,7 +206,8 @@ applications.
 
 The following is a list of rules and their identifiers which can be overridden:
 
-- `typescript`: Compiles `.ts` and `.tsx` files from the `src` directory using TypeScript. Contains two loaders named `sourcemap` and `ts`.
+- `sourcemap`: Allows using source maps for modules. Contains a single loader named `sourcemap`.
+- `typescript`: Compiles `.ts` and `.tsx` files from the `src` directory using TypeScript. Contains a single loader named `ts`.
 - `html`: Allows importing HTML files from modules. Contains a single loader named `file`.
 - `style`: Allows importing CSS stylesheets from modules. Contains two loaders named `style` and `css`.
 - `img`, `svg`, `ico`: Allows import image files from modules. Each contains a single loader named `url`.
