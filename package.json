@@ -1,6 +1,6 @@
 {
   "name": "neutrino-preset-ts",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Neutrino preset for building applications with TypeScript",
   "main": "index.js",
   "scripts": {
@@ -45,7 +45,7 @@
     "neutrino-middleware-minify": "^5.6.0",
     "neutrino-middleware-named-modules": "^5.6.0",
     "neutrino-middleware-style-loader": "^5.6.0",
-    "neutrino-middleware-ts-loader": "2.3",
+    "neutrino-middleware-ts-loader": "^2.3.1",
     "ramda": "^0.23.0",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.3",
