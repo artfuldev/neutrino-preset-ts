@@ -25,18 +25,18 @@
 ## Installation
 
 `neutrino-preset-ts` can be installed via the Yarn or npm clients. Inside your project, make sure
-`neutrino` and `neutrino-preset-ts` are development dependencies.
+`neutrino`, `typescript`, and `neutrino-preset-ts` are development dependencies.
 
 #### Yarn
 
 ```bash
-❯ yarn add --dev neutrino neutrino-preset-ts
+❯ yarn add --dev neutrino typescript neutrino-preset-ts
 ```
 
 #### npm
 
 ```bash
-❯ npm install --save-dev neutrino neutrino-preset-ts
+❯ npm install --save-dev neutrino typescript neutrino-preset-ts
 ```
 
 ## Project Layout
