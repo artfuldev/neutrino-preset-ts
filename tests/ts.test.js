@@ -38,7 +38,7 @@ test('preset development has given entry if available', t => {
   const api = Neutrino(options);
   api.use(require('..'));
   const config = api.config.toConfig();
-  t.is(config.entry.index[0], join(api.options.source, 'index.xyz'));
+  t.true(config.entry.index.indexOf(join(api.options.source, 'index.xyz')) !== -1);
 });
 
 test('preset production has given entry if available', t => {
@@ -47,7 +47,7 @@ test('preset production has given entry if available', t => {
   const api = Neutrino(options);
   api.use(require('..'));
   const config = api.config.toConfig();
-  t.is(config.entry.index[0], join(api.options.source, 'index.xyz'));
+  t.true(config.entry.index.indexOf(join(api.options.source, 'index.xyz')) !== -1);
 });
 
 test('preset development entry defaults to index.ts', t => {
@@ -55,7 +55,23 @@ test('preset development entry defaults to index.ts', t => {
   const api = Neutrino();
   api.use(require('..'));
   const config = api.config.toConfig();
-  t.is(config.entry.index[0], join(api.options.source, 'index.ts'));
+  t.is(config.entry.index[2], join(api.options.source, 'index.ts'));
+});
+
+test('preset development entry starts with webpack-dev-server', t => {
+  process.env.NODE_ENV = 'development';
+  const api = Neutrino();
+  api.use(require('..'));
+  const config = api.config.toConfig();
+  t.true(config.entry.index[0].indexOf(`webpack-dev-server/client?`) === 0);
+});
+
+test('preset development entry index has webpack/hot/dev-server', t => {
+  process.env.NODE_ENV = 'development';
+  const api = Neutrino();
+  api.use(require('..'));
+  const config = api.config.toConfig();
+  t.is(config.entry.index[1], `webpack/hot/dev-server`);
 });
 
 test('preset production entry defaults to index.ts', t => {
