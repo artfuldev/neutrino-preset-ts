@@ -108,8 +108,9 @@ module.exports = (neutrino) => {
       config
         .devtool('inline-source-map')
         .entry('index')
-        .add(`webpack-dev-server/client?${protocol}://${host}:${port}/`)
-        .add('webpack/hot/dev-server');
+          .prepend('webpack/hot/dev-server')
+          .prepend(`webpack-dev-server/client?${protocol}://${host}:${port}/`)
+          .end();
     }, config => {
       neutrino.use(clean, { paths: [neutrino.options.output] });
       neutrino.use(minify);
