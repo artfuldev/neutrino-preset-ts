@@ -108,7 +108,6 @@ module.exports = (neutrino) => {
       config
         .devtool('inline-source-map')
         .entry('index')
-          .prepend('webpack/hot/dev-server')
           .prepend(`webpack-dev-server/client?${protocol}://${host}:${port}/`)
           .end();
     }, config => {
